@@ -3,7 +3,6 @@ package com.outfit.interview.detector.outfit7appdetector;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,7 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.outfit.interview.detector.outfit7appdetector.adapters.InstalledAppAdapter;
+import com.outfit.interview.detector.outfit7appdetector.adapters.AppAdapter;
 import com.outfit.interview.detector.outfit7appdetector.models.AppData;
 import com.outfit.interview.detector.outfit7appdetector.utils.AppUtils;
 
@@ -65,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
             Log.d(AppUtils.INTERNAL_ERROR, "Name was not found.");
         }
 
-        InstalledAppAdapter appAdapter = new InstalledAppAdapter(this, listOfApps);
+        AppAdapter appAdapter = new AppAdapter(this, listOfApps);
 
         ListView listView = (ListView) findViewById(R.id.listView);
         listView.setAdapter(appAdapter);

@@ -18,9 +18,9 @@ import java.util.List;
  * Created by Dejan on 18/11/2017.
  */
 
-public class InstalledAppAdapter extends ArrayAdapter<AppData> {
+public class AppAdapter extends ArrayAdapter<AppData> {
 
-    public InstalledAppAdapter(Context context, List<AppData> apps) {
+    public AppAdapter(Context context, List<AppData> apps) {
         super(context, 0, apps);
     }
 
