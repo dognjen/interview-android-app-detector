@@ -63,15 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         pckg
                 );
 
-                Log.d(TAG, "Logo : " + pm.getApplicationIcon(packageInfo));
-                Log.d(TAG, "Application name : " + pm.getApplicationLabel(packageInfo));
-                //Log.d(TAG, "Package version name : " + pm.getPackageInfo(s, 0).versionName);
-                //Log.d(TAG, "Package version code : " + pm.getPackageInfo(s, 0).versionCode);
-                Log.d(TAG, "Installed package : " + packageInfo.packageName);
-                Log.d(TAG, "Launch Activity : " + pm.getLaunchIntentForPackage(packageInfo.packageName));
-
                 listOfApps.add(app);
-
             }
         } catch (PackageManager.NameNotFoundException e) {
             Log.d(TAG, "Name was not found.");
