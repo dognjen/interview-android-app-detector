@@ -8,5 +8,5 @@
     <string name="main_activity_package_name">Package:</string>
     <string name="main_activity_app_version">Version:</string>
     <string name="main_activity_app_version_code">Version code:</string>
-    <string name="main_activity_button_open_app">Open App</string>
+    <string name="main_activity_button_refresh">Refresh</string>
 </resources>

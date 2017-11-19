@@ -12,16 +12,16 @@ public class AppData {
 
     private Integer applicationVersionCode;
 
-    private String applicationVersionName;
+    private String applicationVersion;
 
     private Drawable applicationLogo;
 
     private String applicationPackage;
 
-    public AppData(String applicationName, Integer applicationVersionCode, String applicationVersionName, Drawable applicationLogo, String applicationPackage) {
+    public AppData(String applicationName, Integer applicationVersionCode, String applicationVersion, Drawable applicationLogo, String applicationPackage) {
         this.applicationName = applicationName;
         this.applicationVersionCode = applicationVersionCode;
-        this.applicationVersionName = applicationVersionName;
+        this.applicationVersion = applicationVersion;
         this.applicationLogo = applicationLogo;
         this.applicationPackage = applicationPackage;
     }
@@ -42,12 +42,12 @@ public class AppData {
         this.applicationVersionCode = applicationVersionCode;
     }
 
-    public String getApplicationVersionName() {
-        return applicationVersionName;
+    public String getApplicationVersion() {
+        return applicationVersion;
     }
 
-    public void setApplicationVersionName(String applicationVersionName) {
-        this.applicationVersionName = applicationVersionName;
+    public void setApplicationVersion(String applicationVersion) {
+        this.applicationVersion = applicationVersion;
     }
 
     public Drawable getApplicationLogo() {
