@@ -13,19 +13,16 @@ import android.widget.ListView;
 
 import com.outfit.interview.detector.outfit7appdetector.adapters.InstalledAppAdapter;
 import com.outfit.interview.detector.outfit7appdetector.models.AppData;
+import com.outfit.interview.detector.outfit7appdetector.utils.AppUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String OUTFIT7_PACKAGE = "com.outfit7";
-    private static final String TAG = "ABC";
-
     private static PackageManager pm;
 
-    List<AppData> listOfApps;
-
+    private List<AppData> listOfApps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +35,8 @@ public class MainActivity extends AppCompatActivity {
         findApplications();
     }
 
-    public void findApplications() {
+    private void findApplications() {
 
-        //final PackageManager pm = getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
 
         try {
@@ -51,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                     continue;
                 } else if ((packageInfo.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
                     continue;
-                } else if (!pckg.startsWith(OUTFIT7_PACKAGE)) {
+                } else if (!pckg.startsWith(AppUtils.OUTFIT7_PACKAGE)) {
                     continue;
                 }
 
@@ -66,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 listOfApps.add(app);
             }
         } catch (PackageManager.NameNotFoundException e) {
-            Log.d(TAG, "Name was not found.");
+            Log.d(AppUtils.INTERNAL_ERROR, "Name was not found.");
         }
 
         InstalledAppAdapter appAdapter = new InstalledAppAdapter(this, listOfApps);
@@ -83,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                 if (launchIntent != null) {
                     startActivity(launchIntent);
                 } else {
-                    Log.d(TAG, "Could not start application " + app.getApplicationName());
+                    Log.d(AppUtils.INTERNAL_ERROR, "Could not start application " + app.getApplicationName());
                 }
             }
         });
